@@ -8,8 +8,8 @@ use Illuminate\Http\Request;
 class ProductController extends Controller
 {
     public function index(){
-        $item = response()->json(Product::all());
-        return $item;
+        $items = response()->json(Product::all());
+        return $items;
     }
 
     public function show($id){

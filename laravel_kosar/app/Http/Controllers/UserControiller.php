@@ -8,8 +8,8 @@ use Illuminate\Http\Request;
 class UserControiller extends Controller
 {
    public function index(){
-        $user = response()->json(User::all());
-        return $user;
+        $users = response()->json(User::all());
+        return $users;
     }
 
     public function show($id){
