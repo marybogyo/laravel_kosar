@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Http\Controllers\BasketController;
 use App\Models\Basket;
 use App\Models\Product;
 use App\Models\ProducType;
@@ -24,8 +25,11 @@ class BasketFactory extends Factory
         do {
             $user_id = User::all()->random()->id;
             $item_id = Product::all()->random()->item_id;
+            $basket = Basket::where('user_id', $user_id)
+            ->where('item_id','=', $item_id)
+            ->get();
             $repeats--;
-        } while ($repeats >= 0 && Basket::find([$item_id, $user_id]));
+        } while ($repeats >= 0 && count($basket)>0);
  
         return [
             'user_id' => $user_id,

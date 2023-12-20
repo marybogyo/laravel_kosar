@@ -14,12 +14,12 @@ return new class extends Migration
         Schema::create('produc_types', function (Blueprint $table) {
             $table->id('type_id');
             $table->string('name');
-            $table->longtext('description');
+            $table->longtext('discription');
             $table->integer('cost')->default(200);
             $table->timestamps();
         });
 
-        
+
     }
 
     /**

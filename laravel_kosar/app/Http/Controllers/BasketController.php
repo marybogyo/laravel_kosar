@@ -8,8 +8,8 @@ use Illuminate\Http\Request;
 class BasketController extends Controller
 {
     public function index(){
-        return response()->json(Basket::all());
-    
+        $baskets= response()->json(Basket::all());
+        return $baskets;
     }
 
     public function show($user_id, $item_id){

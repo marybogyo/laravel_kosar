@@ -20,7 +20,7 @@ class ProducTypeController extends Controller
     public function store(Request $request){
         $type = new ProducType();
         $type->name = $request->name;
-        $type->description = $request->description;
+        $type->discription = $request->discription;
         $type->cost = $request->cost;
 
         $type->save();
@@ -29,7 +29,7 @@ class ProducTypeController extends Controller
     public function update(Request $request, $id){
         $type = ProducType::find($id);
         $type->name = $request->name;
-        $type->description = $request->description;
+        $type->discription = $request->discription;
         $type->cost = $request->cost;
 
         $type->save();
